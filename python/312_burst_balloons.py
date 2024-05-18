@@ -8,8 +8,12 @@ class Solution:
             for left in range(len(nums) - offset):
                 right = left + offset
                 for pivot in range(left + 1, right):
-                    coins = nums[left] * nums[pivot] * nums[right]
-                    coins += cache.get((left, pivot), 0) + cache.get((pivot, right), 0)
+                    coins = (
+                        nums[left] * nums[pivot] * nums[right]
+                        + cache.get((left, pivot), 0)
+                        + cache.get((pivot, right), 0)
+                    )
+
                     cache[(left, right)] = max(coins, cache.get((left, right), 0))
 
         return cache.get((0, len(nums) - 1), 0)
