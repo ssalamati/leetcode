@@ -5,7 +5,7 @@ class Solution:
 
         res = []
 
-        for i in range(len(nums)):
+        for _ in range(len(nums)):
             num = nums.pop(0)
             perms = self.permute(nums)
 
