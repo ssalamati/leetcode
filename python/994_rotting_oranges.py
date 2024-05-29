@@ -21,9 +21,9 @@ class Solution:
                 for x, y in [(i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1)]:
                     if x in range(ROWS) and y in range(COLS) and grid[x][y] == 1:
                         fresh -= 1
-                        grid[i][j] = 2
+                        grid[x][y] = 2
                         queue.append((x, y))
 
             time += 1
 
-        return time
+        return time if fresh == 0 else -1
