@@ -8,3 +8,4 @@ SELECT
 FROM Register, users_count
 GROUP BY 1
 ORDER BY 2 DESC, 1
+ 
